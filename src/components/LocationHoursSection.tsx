@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Globe, Clock, Navigation, Copy, Check, ExternalLink, AlertCircle } from 'lucide-react';
 import { BAKERY_INFO, BUSINESS_HOURS } from '../data/bakeryData';
 import { getStoreStatus, getCurrentDayName } from '../utils/timeUtils';
+import { ScrollFloat } from './ScrollFloat';
 
 export const LocationHoursSection: React.FC = () => {
   const [copiedAddress, setCopiedAddress] = useState(false);
@@ -20,7 +21,7 @@ export const LocationHoursSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <ScrollFloat delay={0.1} direction="up" distance={25} className="text-center max-w-3xl mx-auto space-y-3 mb-12">
           <div className="inline-block px-3 py-1 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-bold uppercase tracking-widest rounded-full">
             Visit Coaldale Bakery
           </div>
@@ -30,7 +31,7 @@ export const LocationHoursSection: React.FC = () => {
           <p className="text-sm sm:text-base text-stone-500 font-sans">
             Conveniently located at <strong>1907 20th Ave, Coaldale, AB</strong>. Ample storefront parking and fast takeout pickup available.
           </p>
-        </div>
+        </ScrollFloat>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           

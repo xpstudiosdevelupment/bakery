@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Search, Filter, Plus, Check, ShoppingBag, Info, Clock, Sparkles, Phone } from 'lucide-react';
 import { MENU_ITEMS } from '../data/bakeryData';
 import { MenuItem, MenuItemCategory } from '../types';
+import { ScrollFloat } from './ScrollFloat';
 
 interface MenuSectionProps {
   onAddToCart: (item: MenuItem) => void;
@@ -56,98 +57,96 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
   };
 
   const renderCard = (item: MenuItem) => {
-    const isInCart = cartItemIds.includes(item.id);
-    const isJustAdded = addedAnimationId === item.id;
-
     return (
-      <div
-        key={item.id}
-        onClick={() => setActiveItemModal(item)}
-        className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-2xs hover:border-[#D4A373] hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
-      >
-        <div>
-          {/* Item Image & Badges */}
-          <div className="relative h-48 overflow-hidden bg-[#FDFBF7]">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#3D2B1F]/60 via-transparent to-transparent" />
-            
-            {/* Top Badges */}
-            <div className="absolute top-3 left-3 right-3 flex justify-between items-start gap-2">
-              {item.isPopular ? (
-                <span className="bg-[#D4A373] text-[#3D2B1F] text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" /> Popular
-                </span>
-              ) : item.freshOutTime ? (
-                <span className="bg-[#3D2B1F] text-[#D4A373] text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1">
-                  <Clock className="w-3 h-3" /> {item.freshOutTime}
-                </span>
-              ) : <div />}
+      <ScrollFloat key={item.id} floatOnHover distance={25} className="h-full">
+        <div
+          onClick={() => setActiveItemModal(item)}
+          className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-2xs hover:border-[#D4A373] hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer h-full"
+        >
+          <div>
+            {/* Item Image & Badges */}
+            <div className="relative h-48 overflow-hidden bg-[#FDFBF7]">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3D2B1F]/60 via-transparent to-transparent" />
+              
+              {/* Top Badges */}
+              <div className="absolute top-3 left-3 right-3 flex justify-between items-start gap-2">
+                {item.isPopular ? (
+                  <span className="bg-[#D4A373] text-[#3D2B1F] text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1">
+                    <Sparkles className="w-3 h-3" /> Popular
+                  </span>
+                ) : item.freshOutTime ? (
+                  <span className="bg-[#3D2B1F] text-[#D4A373] text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1">
+                    <Clock className="w-3 h-3" /> {item.freshOutTime}
+                  </span>
+                ) : <div />}
 
-              {item.unit && (
-                <span className="bg-white/95 text-[#3D2B1F] font-sans font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-xs border border-stone-200">
-                  {item.unit}
-                </span>
+                {item.unit && (
+                  <span className="bg-white/95 text-[#3D2B1F] font-sans font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-xs border border-stone-200">
+                    {item.unit}
+                  </span>
+                )}
+              </div>
+
+              {/* Dutch Original Name Tag */}
+              {item.dutchName && (
+                <div className="absolute bottom-2 left-3 bg-[#3D2B1F]/90 text-[#D4A373] text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-md backdrop-blur-xs">
+                  🇳🇱 {item.dutchName}
+                </div>
               )}
             </div>
 
-            {/* Dutch Original Name Tag */}
-            {item.dutchName && (
-              <div className="absolute bottom-2 left-3 bg-[#3D2B1F]/90 text-[#D4A373] text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-md backdrop-blur-xs">
-                🇳🇱 {item.dutchName}
+            {/* Card Content */}
+            <div className="p-5 space-y-2.5">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="font-serif font-bold text-lg text-[#3D2B1F] group-hover:text-[#D4A373] transition-colors leading-snug">
+                  {item.name}
+                </h3>
               </div>
-            )}
-          </div>
 
-          {/* Card Content */}
-          <div className="p-5 space-y-2.5">
-            <div className="flex items-start justify-between gap-2">
-              <h3 className="font-serif font-bold text-lg text-[#3D2B1F] group-hover:text-[#D4A373] transition-colors leading-snug">
-                {item.name}
-              </h3>
-            </div>
+              <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed font-sans">
+                {item.description}
+              </p>
 
-            <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed font-sans">
-              {item.description}
-            </p>
+              {/* Options Pill */}
+              {item.options && item.options.length > 0 && (
+                <div className="text-[11px] font-medium text-[#3D2B1F] bg-[#D4A373]/10 px-2.5 py-1 rounded-md border border-[#D4A373]/30 inline-block">
+                  Available in: {item.options.join(', ')}
+                </div>
+              )}
 
-            {/* Options Pill */}
-            {item.options && item.options.length > 0 && (
-              <div className="text-[11px] font-medium text-[#3D2B1F] bg-[#D4A373]/10 px-2.5 py-1 rounded-md border border-[#D4A373]/30 inline-block">
-                Available in: {item.options.join(', ')}
+              {/* Tags & Dietary Chips */}
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {item.tags.map((tag, idx) => (
+                  <span key={idx} className="bg-[#FDFBF7] text-stone-500 text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded border border-stone-200">
+                    {tag}
+                  </span>
+                ))}
               </div>
-            )}
-
-            {/* Tags & Dietary Chips */}
-            <div className="flex flex-wrap gap-1.5 pt-1">
-              {item.tags.map((tag, idx) => (
-                <span key={idx} className="bg-[#FDFBF7] text-stone-500 text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded border border-stone-200">
-                  {tag}
-                </span>
-              ))}
             </div>
           </div>
-        </div>
 
-        {/* Card Footer CTA */}
-        <div className="p-4 mt-auto border-t border-stone-100">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveItemModal(item);
-            }}
-            id={`view-details-${item.id}`}
-            className="w-full py-2 text-xs uppercase tracking-widest font-bold text-[#3D2B1F] bg-stone-100 hover:bg-[#3D2B1F] hover:text-[#FDFBF7] rounded-lg transition-all flex items-center justify-center gap-1.5"
-          >
-            <Info className="w-3.5 h-3.5 text-[#D4A373]" /> View Item Details
-          </button>
-        </div>
+          {/* Card Footer CTA */}
+          <div className="p-4 mt-auto border-t border-stone-100">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveItemModal(item);
+              }}
+              id={`view-details-${item.id}`}
+              className="w-full py-2 text-xs uppercase tracking-widest font-bold text-[#3D2B1F] bg-stone-100 hover:bg-[#3D2B1F] hover:text-[#FDFBF7] rounded-lg transition-all flex items-center justify-center gap-1.5"
+            >
+              <Info className="w-3.5 h-3.5 text-[#D4A373]" /> View Item Details
+            </button>
+          </div>
 
-      </div>
+        </div>
+      </ScrollFloat>
     );
   };
 
@@ -156,7 +155,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
+        <ScrollFloat delay={0.1} direction="up" distance={25} className="text-center max-w-3xl mx-auto space-y-3 mb-10">
           <div className="inline-block px-3 py-1 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-bold uppercase tracking-widest rounded-full">
             Scratch Baked Bakery Menu
           </div>
@@ -166,7 +165,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
           <p className="text-sm sm:text-base text-stone-500 font-sans">
             Baked fresh every morning in Coaldale. Call <a href="tel:4033453322" className="underline font-bold text-[#D4A373]">(403) 345-3322</a> to place an order or inquire about fresh batch availability.
           </p>
-        </div>
+        </ScrollFloat>
 
         {/* Filter Controls Row */}
         <div className="space-y-4 mb-8">

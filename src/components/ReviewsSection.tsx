@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Star, MessageSquarePlus, CheckCircle, ThumbsUp, Filter } from 'lucide-react';
 import { CUSTOMER_REVIEWS, BAKERY_INFO } from '../data/bakeryData';
 import { Review } from '../types';
+import { ScrollFloat } from './ScrollFloat';
 
 export const ReviewsSection: React.FC = () => {
   const [reviewsList, setReviewsList] = useState<Review[]>(CUSTOMER_REVIEWS);
@@ -47,7 +48,7 @@ export const ReviewsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <ScrollFloat delay={0.1} direction="up" distance={25} className="text-center max-w-3xl mx-auto space-y-3 mb-12">
           <div className="inline-block px-3 py-1 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-bold uppercase tracking-widest rounded-full">
             Loved By Coaldale & Southern Alberta
           </div>
@@ -57,51 +58,53 @@ export const ReviewsSection: React.FC = () => {
           <p className="text-sm sm:text-base text-stone-500 font-sans">
             Read genuine experiences from neighbors, daily regulars, and travelers stopping by for fresh bread and Dutch pastries.
           </p>
-        </div>
+        </ScrollFloat>
 
         {/* Rating Overview Grid */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-2xs mb-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-          
-          <div className="md:col-span-5 text-center md:text-left space-y-2 border-b md:border-b-0 md:border-r border-stone-200 pb-6 md:pb-0 md:pr-8">
-            <div className="text-5xl font-serif font-bold text-[#3D2B1F]">4.8</div>
-            <div className="flex justify-center md:justify-start text-[#D4A373] gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#D4A373] text-[#D4A373]" />
-              ))}
+        <ScrollFloat delay={0.2} direction="up" distance={25} floatOnHover className="mb-10">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-2xs grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            
+            <div className="md:col-span-5 text-center md:text-left space-y-2 border-b md:border-b-0 md:border-r border-stone-200 pb-6 md:pb-0 md:pr-8">
+              <div className="text-5xl font-serif font-bold text-[#3D2B1F]">4.8</div>
+              <div className="flex justify-center md:justify-start text-[#D4A373] gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#D4A373] text-[#D4A373]" />
+                ))}
+              </div>
+              <div className="text-xs text-stone-400 font-bold uppercase tracking-widest">
+                Based on 492 Google Reviews
+              </div>
+              <p className="text-xs text-stone-500 font-sans">
+                Coaldale Bakery is top-rated in Lethbridge County for friendly service, quality scratch baking, and clean store environment.
+              </p>
             </div>
-            <div className="text-xs text-stone-400 font-bold uppercase tracking-widest">
-              Based on 492 Google Reviews
-            </div>
-            <p className="text-xs text-stone-500 font-sans">
-              Coaldale Bakery is top-rated in Lethbridge County for friendly service, quality scratch baking, and clean store environment.
-            </p>
-          </div>
 
-          <div className="md:col-span-7 space-y-2 text-xs font-sans">
-            <div className="flex items-center gap-3">
-              <span className="w-12 font-bold text-[#3D2B1F]">5 Stars</span>
-              <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
-                <div className="h-full bg-[#D4A373] rounded-full w-[92%]" />
+            <div className="md:col-span-7 space-y-2 text-xs font-sans">
+              <div className="flex items-center gap-3">
+                <span className="w-12 font-bold text-[#3D2B1F]">5 Stars</span>
+                <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
+                  <div className="h-full bg-[#D4A373] rounded-full w-[92%]" />
+                </div>
+                <span className="w-10 text-right font-medium text-stone-400">92%</span>
               </div>
-              <span className="w-10 text-right font-medium text-stone-400">92%</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="w-12 font-bold text-[#3D2B1F]">4 Stars</span>
-              <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
-                <div className="h-full bg-[#D4A373]/80 rounded-full w-[6%]" />
+              <div className="flex items-center gap-3">
+                <span className="w-12 font-bold text-[#3D2B1F]">4 Stars</span>
+                <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
+                  <div className="h-full bg-[#D4A373]/80 rounded-full w-[6%]" />
+                </div>
+                <span className="w-10 text-right font-medium text-stone-400">6%</span>
               </div>
-              <span className="w-10 text-right font-medium text-stone-400">6%</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="w-12 font-bold text-[#3D2B1F]">3 Stars</span>
-              <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
-                <div className="h-full bg-[#D4A373]/50 rounded-full w-[2%]" />
+              <div className="flex items-center gap-3">
+                <span className="w-12 font-bold text-[#3D2B1F]">3 Stars</span>
+                <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
+                  <div className="h-full bg-[#D4A373]/50 rounded-full w-[2%]" />
+                </div>
+                <span className="w-10 text-right font-medium text-stone-400">2%</span>
               </div>
-              <span className="w-10 text-right font-medium text-stone-400">2%</span>
             </div>
-          </div>
 
-        </div>
+          </div>
+        </ScrollFloat>
 
         {/* Filter & Add Review Toolbar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
@@ -144,42 +147,43 @@ export const ReviewsSection: React.FC = () => {
 
         {/* Reviews Cards Masonry */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredReviews.map((rev) => (
-            <div
-              key={rev.id}
-              className="bg-white p-6 rounded-2xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors flex flex-col justify-between space-y-4"
-            >
-              <div className="space-y-3">
-                
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex text-[#D4A373]">
-                    {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#D4A373] text-[#D4A373]" />
-                    ))}
+          {filteredReviews.map((rev, i) => (
+            <ScrollFloat key={rev.id} delay={(i % 3) * 0.1} floatOnHover className="h-full">
+              <div
+                className="bg-white p-6 rounded-2xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors flex flex-col justify-between space-y-4 h-full"
+              >
+                <div className="space-y-3">
+                  
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex text-[#D4A373]">
+                      {[...Array(rev.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-[#D4A373] text-[#D4A373]" />
+                      ))}
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">{rev.date}</span>
                   </div>
-                  <span className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">{rev.date}</span>
+
+                  <p className="text-xs sm:text-sm text-[#3D2B1F] leading-relaxed italic font-serif">
+                    "{rev.content}"
+                  </p>
+
                 </div>
 
-                <p className="text-xs sm:text-sm text-[#3D2B1F] leading-relaxed italic font-serif">
-                  "{rev.content}"
-                </p>
+                <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2 text-xs">
+                  <div>
+                    <div className="font-serif font-bold text-[#3D2B1F]">{rev.author}</div>
+                    <div className="text-[10px] text-stone-400 uppercase tracking-wider font-semibold">{rev.location}</div>
+                  </div>
 
-              </div>
-
-              <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2 text-xs">
-                <div>
-                  <div className="font-serif font-bold text-[#3D2B1F]">{rev.author}</div>
-                  <div className="text-[10px] text-stone-400 uppercase tracking-wider font-semibold">{rev.location}</div>
+                  {rev.favoriteItem && (
+                    <span className="bg-[#FDFBF7] text-[#D4A373] text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-md border border-stone-200 max-w-[130px] truncate">
+                      ❤️ {rev.favoriteItem}
+                    </span>
+                  )}
                 </div>
 
-                {rev.favoriteItem && (
-                  <span className="bg-[#FDFBF7] text-[#D4A373] text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-md border border-stone-200 max-w-[130px] truncate">
-                    ❤️ {rev.favoriteItem}
-                  </span>
-                )}
               </div>
-
-            </div>
+            </ScrollFloat>
           ))}
         </div>
 

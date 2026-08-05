@@ -1,6 +1,7 @@
 import React from 'react';
-import { Star, Phone, MapPin, ShoppingBag, Clock, Heart, Award, ArrowRight } from 'lucide-react';
+import { Star, Phone, MapPin, ShoppingBag, Award, ArrowRight } from 'lucide-react';
 import { BAKERY_INFO, BAKERY_IMAGES } from '../data/bakeryData';
+import { ScrollFloat, FloatingImageContainer } from './ScrollFloat';
 
 interface HeroProps {
   onExploreMenu: () => void;
@@ -24,62 +25,72 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             {/* Trust Badge / Eyebrow */}
-            <div className="inline-block px-3 py-1 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-bold uppercase tracking-widest rounded-full w-fit">
-              Est. 1986 — Coaldale, Alberta • Local Favorite
-            </div>
+            <ScrollFloat delay={0.05} direction="up" distance={20}>
+              <div className="inline-block px-3 py-1 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-bold uppercase tracking-widest rounded-full w-fit">
+                Est. 1986 — Coaldale, Alberta • Local Favorite
+              </div>
+            </ScrollFloat>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#3D2B1F] tracking-tighter leading-[1.05]">
-              A Touch of <span className="italic text-[#D4A373]">Dutch</span>
-            </h1>
+            <ScrollFloat delay={0.15} direction="up" distance={30}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#3D2B1F] tracking-tighter leading-[1.05]">
+                A Touch of <span className="italic text-[#D4A373]">Dutch</span>
+              </h1>
+            </ScrollFloat>
 
             {/* Subheading */}
-            <p className="text-base sm:text-lg text-stone-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans">
-              Coaldale Bakery
-            </p>
+            <ScrollFloat delay={0.25} direction="up" distance={25}>
+              <p className="text-base sm:text-lg text-stone-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans">
+                Coaldale Bakery
+              </p>
+            </ScrollFloat>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-              <button
-                onClick={onExploreMenu}
-                id="hero-explore-menu-btn"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#3D2B1F] hover:bg-[#5A4030] text-[#FDFBF7] px-7 py-3.5 text-xs uppercase tracking-widest font-bold shadow-sm transition-all"
-              >
-                <ShoppingBag className="w-4 h-4 text-[#D4A373]" />
-                <span>Explore Full Menu</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </button>
+            <ScrollFloat delay={0.35} direction="up" distance={25}>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                <button
+                  onClick={onExploreMenu}
+                  id="hero-explore-menu-btn"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#3D2B1F] hover:bg-[#5A4030] text-[#FDFBF7] px-7 py-3.5 text-xs uppercase tracking-widest font-bold shadow-sm transition-all rounded-lg"
+                >
+                  <ShoppingBag className="w-4 h-4 text-[#D4A373]" />
+                  <span>Explore Full Menu</span>
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </button>
 
-              <a
-                href={`tel:${BAKERY_INFO.phone.replace(/[^0-9]/g, '')}`}
-                id="hero-call-btn"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#D4A373] hover:bg-[#C29263] text-[#3D2B1F] px-6 py-3.5 text-xs uppercase tracking-widest font-bold shadow-xs transition-all"
-              >
-                <Phone className="w-4 h-4 text-[#3D2B1F]" />
-                <span>Call Us (403) 345-3322</span>
-              </a>
-            </div>
+                <a
+                  href={`tel:${BAKERY_INFO.phone.replace(/[^0-9]/g, '')}`}
+                  id="hero-call-btn"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#D4A373] hover:bg-[#C29263] text-[#3D2B1F] px-6 py-3.5 text-xs uppercase tracking-widest font-bold shadow-xs transition-all rounded-lg"
+                >
+                  <Phone className="w-4 h-4 text-[#3D2B1F]" />
+                  <span>Call Us (403) 345-3322</span>
+                </a>
+              </div>
+            </ScrollFloat>
 
             {/* Review Badge */}
-            <div className="pt-4 border-t border-stone-200 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-left">
-              <div className="flex items-center gap-4 bg-white p-4 border border-stone-200 rounded-xl shadow-xs">
-                <div className="text-3xl font-serif font-bold text-[#3D2B1F]">4.8</div>
-                <div className="h-8 w-px bg-stone-200" />
-                <div>
-                  <div className="flex text-[#D4A373] mb-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#D4A373] text-[#D4A373]" />
-                    ))}
+            <ScrollFloat delay={0.45} direction="up" distance={20}>
+              <div className="pt-4 border-t border-stone-200 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-left">
+                <div className="flex items-center gap-4 bg-white p-4 border border-stone-200 rounded-xl shadow-xs">
+                  <div className="text-3xl font-serif font-bold text-[#3D2B1F]">4.8</div>
+                  <div className="h-8 w-px bg-stone-200" />
+                  <div>
+                    <div className="flex text-[#D4A373] mb-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-[#D4A373] text-[#D4A373]" />
+                      ))}
+                    </div>
+                    <p className="text-[10px] text-stone-400 font-bold uppercase tracking-widest">Nearly 500 Google Reviews</p>
                   </div>
-                  <p className="text-[10px] text-stone-400 font-bold uppercase tracking-widest">Nearly 500 Google Reviews</p>
+                </div>
+
+                <div className="text-left space-y-0.5">
+                  <div className="text-xs font-bold text-[#3D2B1F]">1907 20th Ave, Coaldale</div>
+                  <div className="text-[11px] text-stone-400 uppercase tracking-wider font-semibold">Fresh Oven Drops Daily at 7 AM</div>
                 </div>
               </div>
-
-              <div className="text-left space-y-0.5">
-                <div className="text-xs font-bold text-[#3D2B1F]">1907 20th Ave, Coaldale</div>
-                <div className="text-[11px] text-stone-400 uppercase tracking-wider font-semibold">Fresh Oven Drops Daily at 7 AM</div>
-              </div>
-            </div>
+            </ScrollFloat>
 
           </div>
 
@@ -88,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Main Banner Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+              <FloatingImageContainer delay={0.2} className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-200">
                 <img
                   src={BAKERY_IMAGES.hero}
                   alt="Coaldale Bakery artisan breads and pastries display"
@@ -104,32 +115,36 @@ export const Hero: React.FC<HeroProps> = ({
                     Baked fresh every morning at 4:00 AM in Coaldale, Alberta
                   </p>
                 </div>
-              </div>
+              </FloatingImageContainer>
 
               {/* Floating Highlight Card */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white p-4 rounded-xl shadow-md border border-stone-200 flex items-center gap-3.5 max-w-[260px] sm:max-w-[280px]">
-                <div className="w-11 h-11 rounded-lg bg-[#FDFBF7] flex items-center justify-center text-[#D4A373] shrink-0 border border-stone-200">
-                  <Award className="w-5 h-5" />
+              <ScrollFloat delay={0.4} direction="up" distance={30} floatOnHover className="absolute -bottom-6 -left-4 sm:-left-6 z-10">
+                <div className="bg-white p-4 rounded-xl shadow-md border border-stone-200 flex items-center gap-3.5 max-w-[260px] sm:max-w-[280px]">
+                  <div className="w-11 h-11 rounded-lg bg-[#FDFBF7] flex items-center justify-center text-[#D4A373] shrink-0 border border-stone-200">
+                    <Award className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold text-[#D4A373] uppercase tracking-widest">Famous Local Legend</div>
+                    <div className="font-serif font-bold text-sm text-[#3D2B1F]">Dutch Sausage Rolls</div>
+                    <div className="text-[10px] text-stone-400 uppercase tracking-wider font-medium">Warm & flaky from 10:00 AM</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-[10px] font-bold text-[#D4A373] uppercase tracking-widest">Famous Local Legend</div>
-                  <div className="font-serif font-bold text-sm text-[#3D2B1F]">Dutch Sausage Rolls</div>
-                  <div className="text-[10px] text-stone-400 uppercase tracking-wider font-medium">Warm & flaky from 10:00 AM</div>
-                </div>
-              </div>
+              </ScrollFloat>
 
               {/* Floating Location Card */}
-              <button
-                onClick={onNavigateToLocation}
-                className="absolute -top-4 -right-2 sm:-right-4 bg-[#3D2B1F] text-[#FDFBF7] p-3 rounded-xl shadow-md border border-[#D4A373]/40 flex items-center gap-2.5 hover:scale-105 transition-transform text-left"
-                id="hero-floating-location-btn"
-              >
-                <MapPin className="w-4 h-4 text-[#D4A373] shrink-0" />
-                <div className="text-xs">
-                  <div className="font-bold text-white text-[11px] uppercase tracking-wider">Visit Coaldale Bakery</div>
-                  <div className="text-stone-300 text-[10px]">1907 20th Ave • Takeout Ready</div>
-                </div>
-              </button>
+              <ScrollFloat delay={0.3} direction="down" distance={25} floatOnHover className="absolute -top-4 -right-2 sm:-right-4 z-10">
+                <button
+                  onClick={onNavigateToLocation}
+                  className="bg-[#3D2B1F] text-[#FDFBF7] p-3 rounded-xl shadow-md border border-[#D4A373]/40 flex items-center gap-2.5 hover:scale-105 transition-transform text-left"
+                  id="hero-floating-location-btn"
+                >
+                  <MapPin className="w-4 h-4 text-[#D4A373] shrink-0" />
+                  <div className="text-xs">
+                    <div className="font-bold text-white text-[11px] uppercase tracking-wider">Visit Coaldale Bakery</div>
+                    <div className="text-stone-300 text-[10px]">1907 20th Ave • Takeout Ready</div>
+                  </div>
+                </button>
+              </ScrollFloat>
 
             </div>
           </div>
@@ -138,37 +153,45 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* 4 Feature Cards Row */}
         <div className="mt-12 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors">
-            <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
-              <span>🥐</span> Pure Heritage
+          <ScrollFloat delay={0.1} floatOnHover>
+            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+              <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
+                <span>🥐</span> Pure Heritage
+              </div>
+              <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Scratch Baked Daily</h4>
+              <p className="text-xs text-stone-500 mt-2 leading-relaxed">Real butter, unbleached flour, and traditional recipes with no shortcuts or preservatives.</p>
             </div>
-            <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Scratch Baked Daily</h4>
-            <p className="text-xs text-stone-500 mt-2 leading-relaxed">Real butter, unbleached flour, and traditional recipes with no shortcuts or preservatives.</p>
-          </div>
+          </ScrollFloat>
 
-          <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors">
-            <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
-              <span>🇳🇱</span> Authentic Dutch
+          <ScrollFloat delay={0.2} floatOnHover>
+            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+              <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
+                <span>🇳🇱</span> Authentic Dutch
+              </div>
+              <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Dutch Treats & Pastries</h4>
+              <p className="text-xs text-stone-500 mt-2 leading-relaxed">From Stroopwafels to Almond Banket log, Tompouce cream slices, and Tijgerbrood.</p>
             </div>
-            <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Dutch Treats & Pastries</h4>
-            <p className="text-xs text-stone-500 mt-2 leading-relaxed">From Stroopwafels to Almond Banket log, Tompouce cream slices, and Tijgerbrood.</p>
-          </div>
+          </ScrollFloat>
 
-          <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors">
-            <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
-              <span>🎂</span> Made To Order
+          <ScrollFloat delay={0.3} floatOnHover>
+            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+              <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
+                <span>🎂</span> Made To Order
+              </div>
+              <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Custom Celebration Cakes</h4>
+              <p className="text-xs text-stone-500 mt-2 leading-relaxed">Handcrafted birthday, anniversary, and wedding cakes made to order with real cream.</p>
             </div>
-            <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Custom Celebration Cakes</h4>
-            <p className="text-xs text-stone-500 mt-2 leading-relaxed">Handcrafted birthday, anniversary, and wedding cakes made to order with real cream.</p>
-          </div>
+          </ScrollFloat>
 
-          <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors">
-            <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
-              <span>🛍️</span> Fast & Easy
+          <ScrollFloat delay={0.4} floatOnHover>
+            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+              <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
+                <span>🛍️</span> Fast & Easy
+              </div>
+              <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Convenient Takeout</h4>
+              <p className="text-xs text-stone-500 mt-2 leading-relaxed">Call (403) 345-3322 or order online for fast, easy storefront pickup in Coaldale.</p>
             </div>
-            <h4 className="font-serif font-bold text-lg text-[#3D2B1F]">Convenient Takeout</h4>
-            <p className="text-xs text-stone-500 mt-2 leading-relaxed">Call (403) 345-3322 or order online for fast, easy storefront pickup in Coaldale.</p>
-          </div>
+          </ScrollFloat>
         </div>
 
       </div>

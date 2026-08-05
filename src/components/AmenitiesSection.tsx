@@ -9,6 +9,7 @@ import {
   Car,
   Check
 } from 'lucide-react';
+import { ScrollFloat } from './ScrollFloat';
 
 interface AmenityCategory {
   title: string;
@@ -71,7 +72,7 @@ export const AmenitiesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title & Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <ScrollFloat delay={0.1} direction="up" distance={25} className="text-center max-w-3xl mx-auto space-y-3 mb-12">
           <div className="inline-block px-3 py-1 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-bold uppercase tracking-widest rounded-full">
             Bakery Details & Features
           </div>
@@ -81,41 +82,42 @@ export const AmenitiesSection: React.FC = () => {
           <p className="text-sm sm:text-base text-stone-500 font-sans">
             Everything you need to know for a comfortable visit to Coaldale Bakery.
           </p>
-        </div>
+        </ScrollFloat>
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
-              id={`amenity-card-${cat.title.toLowerCase().replace(/\s+/g, '-')}`}
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-4 border-b border-stone-100 pb-3">
-                  <div className="p-2.5 rounded-xl bg-[#FDFBF7] border border-stone-200/60">
-                    {cat.icon}
+            <ScrollFloat key={idx} delay={(idx % 4) * 0.1} floatOnHover className="h-full">
+              <div
+                className="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full"
+                id={`amenity-card-${cat.title.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-4 border-b border-stone-100 pb-3">
+                    <div className="p-2.5 rounded-xl bg-[#FDFBF7] border border-stone-200/60">
+                      {cat.icon}
+                    </div>
+                    <h3 className="font-serif font-bold text-lg text-[#3D2B1F]">
+                      {cat.title}
+                    </h3>
                   </div>
-                  <h3 className="font-serif font-bold text-lg text-[#3D2B1F]">
-                    {cat.title}
-                  </h3>
-                </div>
 
-                <ul className="space-y-2.5">
-                  {cat.items.map((item, itemIdx) => (
-                    <li
-                      key={itemIdx}
-                      className="flex items-center gap-2.5 text-sm text-stone-700"
-                    >
-                      <span className="flex-shrink-0 w-4 h-4 rounded-full bg-[#D4A373]/15 text-[#D4A373] flex items-center justify-center">
-                        <Check className="w-2.5 h-2.5 stroke-[3]" />
-                      </span>
-                      <span className="font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-2.5">
+                    {cat.items.map((item, itemIdx) => (
+                      <li
+                        key={itemIdx}
+                        className="flex items-center gap-2.5 text-sm text-stone-700"
+                      >
+                        <span className="flex-shrink-0 w-4 h-4 rounded-full bg-[#D4A373]/15 text-[#D4A373] flex items-center justify-center">
+                          <Check className="w-2.5 h-2.5 stroke-[3]" />
+                        </span>
+                        <span className="font-medium">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
+            </ScrollFloat>
           ))}
         </div>
 

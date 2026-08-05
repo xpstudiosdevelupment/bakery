@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone, MapPin, Globe, Clock, Heart, ArrowRight, Check } from 'lucide-react';
 import { BAKERY_INFO } from '../data/bakeryData';
 import logoImg from '../assets/images/coaldale_logo_exact_1785891207590.jpg';
+import { ScrollFloat } from './ScrollFloat';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -22,13 +23,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="bg-[#3D2B1F] text-[#FDFBF7] pt-16 pb-12 border-t border-[#D4A373]/20">
+    <footer className="bg-[#3D2B1F] text-[#FDFBF7] pt-16 pb-12 border-t border-[#D4A373]/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-white/10">
-          
-          {/* Brand Col */}
-          <div className="lg:col-span-4 space-y-4">
+        <ScrollFloat delay={0.1} direction="up" distance={25}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-white/10">
+            
+            {/* Brand Col */}
+            <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <img 
                 src={logoImg} 
@@ -154,6 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
         </div>
+        </ScrollFloat>
 
         {/* Bottom Legal & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-stone-400 gap-4 font-sans">
