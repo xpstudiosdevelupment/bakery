@@ -15,8 +15,21 @@ export const Hero: React.FC<HeroProps> = ({
   onNavigateToLocation
 }) => {
   return (
-    <section id="hero" className="relative bg-[#FDFBF7] overflow-hidden pt-8 pb-16 lg:pb-20 border-b border-stone-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="relative overflow-hidden pt-12 pb-16 lg:pb-24 border-b border-stone-200 min-h-[600px] flex items-center">
+      
+      {/* Background Image Container */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={BAKERY_IMAGES.storefront}
+          alt="Coaldale Bakery storefront exterior"
+          className="w-full h-full object-cover object-center"
+          referrerPolicy="no-referrer"
+        />
+        {/* Dark Warm Gradient Overlay for optimal text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2A1B12]/92 via-[#3D2B1F]/80 to-[#2A1B12]/55 backdrop-blur-[2px]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Main Grid Hero Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -26,21 +39,21 @@ export const Hero: React.FC<HeroProps> = ({
             
             {/* Trust Badge / Eyebrow */}
             <ScrollFloat delay={0.05} direction="up" distance={20}>
-              <div className="inline-block px-3 py-1 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-bold uppercase tracking-widest rounded-full w-fit">
+              <div className="inline-block px-3.5 py-1.5 bg-[#D4A373]/20 border border-[#D4A373]/40 text-[#E8C29D] text-[11px] font-bold uppercase tracking-widest rounded-full w-fit backdrop-blur-xs">
                 Est. 1986 — Coaldale, Alberta • Local Favorite
               </div>
             </ScrollFloat>
 
             {/* Main Headline */}
             <ScrollFloat delay={0.15} direction="up" distance={30}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#3D2B1F] tracking-tighter leading-[1.05]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#FDFBF7] tracking-tighter leading-[1.05] drop-shadow-sm">
                 A Touch of <span className="italic text-[#D4A373]">Dutch</span>
               </h1>
             </ScrollFloat>
 
             {/* Subheading */}
             <ScrollFloat delay={0.25} direction="up" distance={25}>
-              <p className="text-base sm:text-lg text-stone-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans">
+              <p className="text-lg sm:text-xl text-stone-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans font-medium drop-shadow-xs">
                 Coaldale Bakery
               </p>
             </ScrollFloat>
@@ -51,19 +64,19 @@ export const Hero: React.FC<HeroProps> = ({
                 <button
                   onClick={onExploreMenu}
                   id="hero-explore-menu-btn"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#3D2B1F] hover:bg-[#5A4030] text-[#FDFBF7] px-7 py-3.5 text-xs uppercase tracking-widest font-bold shadow-sm transition-all rounded-lg"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#D4A373] hover:bg-[#C29263] text-[#3D2B1F] px-7 py-3.5 text-xs uppercase tracking-widest font-bold shadow-md hover:shadow-lg transition-all rounded-lg"
                 >
-                  <ShoppingBag className="w-4 h-4 text-[#D4A373]" />
+                  <ShoppingBag className="w-4 h-4 text-[#3D2B1F]" />
                   <span>Explore Full Menu</span>
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-4 h-4 ml-1 text-[#3D2B1F]" />
                 </button>
 
                 <a
                   href={`tel:${BAKERY_INFO.phone.replace(/[^0-9]/g, '')}`}
                   id="hero-call-btn"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#D4A373] hover:bg-[#C29263] text-[#3D2B1F] px-6 py-3.5 text-xs uppercase tracking-widest font-bold shadow-xs transition-all rounded-lg"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-[#FDFBF7] border border-white/30 px-6 py-3.5 text-xs uppercase tracking-widest font-bold shadow-sm transition-all rounded-lg backdrop-blur-xs"
                 >
-                  <Phone className="w-4 h-4 text-[#3D2B1F]" />
+                  <Phone className="w-4 h-4 text-[#D4A373]" />
                   <span>Call Us (403) 345-3322</span>
                 </a>
               </div>
@@ -71,8 +84,8 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Review Badge */}
             <ScrollFloat delay={0.45} direction="up" distance={20}>
-              <div className="pt-4 border-t border-stone-200 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-left">
-                <div className="flex items-center gap-4 bg-white p-4 border border-stone-200 rounded-xl shadow-xs">
+              <div className="pt-4 border-t border-white/15 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-left">
+                <div className="flex items-center gap-4 bg-white/95 p-4 border border-stone-200 rounded-xl shadow-md backdrop-blur-sm">
                   <div className="text-3xl font-serif font-bold text-[#3D2B1F]">4.8</div>
                   <div className="h-8 w-px bg-stone-200" />
                   <div>
@@ -81,13 +94,13 @@ export const Hero: React.FC<HeroProps> = ({
                         <Star key={i} className="w-3.5 h-3.5 fill-[#D4A373] text-[#D4A373]" />
                       ))}
                     </div>
-                    <p className="text-[10px] text-stone-400 font-bold uppercase tracking-widest">Nearly 500 Google Reviews</p>
+                    <p className="text-[10px] text-stone-500 font-bold uppercase tracking-widest">Nearly 500 Google Reviews</p>
                   </div>
                 </div>
 
-                <div className="text-left space-y-0.5">
-                  <div className="text-xs font-bold text-[#3D2B1F]">1907 20th Ave, Coaldale</div>
-                  <div className="text-[11px] text-stone-400 uppercase tracking-wider font-semibold">Fresh Oven Drops Daily at 7 AM</div>
+                <div className="text-left space-y-0.5 text-white">
+                  <div className="text-xs font-bold text-[#FDFBF7]">1907 20th Ave, Coaldale</div>
+                  <div className="text-[11px] text-stone-300 uppercase tracking-wider font-semibold">Fresh Oven Drops Daily at 7 AM</div>
                 </div>
               </div>
             </ScrollFloat>
@@ -99,11 +112,11 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Main Banner Image */}
-              <FloatingImageContainer delay={0.2} className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+              <FloatingImageContainer delay={0.2} className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
                 <img
                   src={BAKERY_IMAGES.hero}
                   alt="Coaldale Bakery artisan breads and pastries display"
-                  className="w-full h-[360px] sm:h-[420px] lg:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[360px] sm:h-[420px] lg:h-[450px] object-cover hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3D2B1F]/90 via-[#3D2B1F]/30 to-transparent flex flex-col justify-end p-6 text-white">
@@ -119,7 +132,7 @@ export const Hero: React.FC<HeroProps> = ({
 
               {/* Floating Highlight Card */}
               <ScrollFloat delay={0.4} direction="up" distance={30} floatOnHover className="absolute -bottom-6 -left-4 sm:-left-6 z-10">
-                <div className="bg-white p-4 rounded-xl shadow-md border border-stone-200 flex items-center gap-3.5 max-w-[260px] sm:max-w-[280px]">
+                <div className="bg-white p-4 rounded-xl shadow-xl border border-stone-200 flex items-center gap-3.5 max-w-[260px] sm:max-w-[280px]">
                   <div className="w-11 h-11 rounded-lg bg-[#FDFBF7] flex items-center justify-center text-[#D4A373] shrink-0 border border-stone-200">
                     <Award className="w-5 h-5" />
                   </div>
@@ -135,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({
               <ScrollFloat delay={0.3} direction="down" distance={25} floatOnHover className="absolute -top-4 -right-2 sm:-right-4 z-10">
                 <button
                   onClick={onNavigateToLocation}
-                  className="bg-[#3D2B1F] text-[#FDFBF7] p-3 rounded-xl shadow-md border border-[#D4A373]/40 flex items-center gap-2.5 hover:scale-105 transition-transform text-left"
+                  className="bg-[#3D2B1F] text-[#FDFBF7] p-3 rounded-xl shadow-xl border border-[#D4A373]/40 flex items-center gap-2.5 hover:scale-105 transition-transform text-left"
                   id="hero-floating-location-btn"
                 >
                   <MapPin className="w-4 h-4 text-[#D4A373] shrink-0" />
@@ -154,7 +167,7 @@ export const Hero: React.FC<HeroProps> = ({
         {/* 4 Feature Cards Row */}
         <div className="mt-12 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <ScrollFloat delay={0.1} floatOnHover>
-            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-md hover:border-[#D4A373] transition-colors h-full">
               <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
                 <span>🥐</span> Pure Heritage
               </div>
@@ -164,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({
           </ScrollFloat>
 
           <ScrollFloat delay={0.2} floatOnHover>
-            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-md hover:border-[#D4A373] transition-colors h-full">
               <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
                 <span>🇳🇱</span> Authentic Dutch
               </div>
@@ -174,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({
           </ScrollFloat>
 
           <ScrollFloat delay={0.3} floatOnHover>
-            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-md hover:border-[#D4A373] transition-colors h-full">
               <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
                 <span>🎂</span> Made To Order
               </div>
@@ -184,7 +197,7 @@ export const Hero: React.FC<HeroProps> = ({
           </ScrollFloat>
 
           <ScrollFloat delay={0.4} floatOnHover>
-            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs hover:border-[#D4A373] transition-colors h-full">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-md hover:border-[#D4A373] transition-colors h-full">
               <div className="text-xs uppercase tracking-widest font-bold text-[#D4A373] mb-2 flex items-center gap-1">
                 <span>🛍️</span> Fast & Easy
               </div>

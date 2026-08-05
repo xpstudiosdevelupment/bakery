@@ -29,8 +29,11 @@ import babyCarrotsImg from '../assets/images/steamed_baby_carrots_1785952905410.
 import peasAndCarrotsImg from '../assets/images/peas_and_carrots_1785952913079.jpg';
 import mixedVegImg from '../assets/images/steamed_mixed_vegetables_1785952921746.jpg';
 
+import yellowStorefrontImg from '../assets/images/coaldale_yellow_storefront_1785964897960.jpg';
+
 export const BAKERY_IMAGES = {
   hero: heroArtisanImg,
+  storefront: yellowStorefrontImg,
   breads: artisanBreadsImg,
   pastries: dutchPastriesImg,
   interior: interiorImg,
