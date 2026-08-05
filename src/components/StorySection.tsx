@@ -1,5 +1,4 @@
 import React from 'react';
-import { Heart, CheckCircle2, Award, Clock, Users, Coffee } from 'lucide-react';
 import { BAKERY_INFO, BAKERY_IMAGES } from '../data/bakeryData';
 
 export const StorySection: React.FC = () => {
@@ -40,56 +39,24 @@ export const StorySection: React.FC = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#3D2B1F] tracking-tighter leading-tight">
-              A Local Tradition Built on Scratch Baking & Family Warmth
+              European Style Baked Goods & Dutch Imports Since 1986
             </h2>
 
-            <p className="text-base text-stone-500 leading-relaxed font-sans">
-              At <strong className="text-[#3D2B1F]">Coaldale Bakery</strong>, baking isn't just a business—it's a lifelong passion. Located in the heart of Coaldale, Alberta, our family-oriented bakery has been bringing the warmth of freshly baked artisan breads and authentic Dutch treats to Southern Alberta homes for decades.
+            <p className="text-base text-stone-600 leading-relaxed font-sans">
+              The Coaldale Bakery has been providing Southern Alberta, Canada with European style baked goods and Dutch imports since 1986.
             </p>
 
-            <p className="text-base text-stone-500 leading-relaxed font-sans">
-              We believe in doing things the right way. Every morning long before sunrise, our master bakers weigh raw ingredients by hand, ferment wild sourdoughs, laminate rich butter puff pastry, and prepare our famous Dutch sausage rolls according to time-honored European recipes.
+            <p className="text-base text-stone-600 leading-relaxed font-sans">
+              We offer a wide variety of quality, fresh baked goods daily. We are known for our use of real whipping cream in our delicious cakes and pastries, an extensive variety of specialty breads and buns, fresh daily made donuts as well as beautiful detailing on wedding and event cakes and catering options.
             </p>
 
-            {/* Core Values Checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="flex items-start gap-3 bg-white p-4 rounded-xl border border-stone-200">
-                <CheckCircle2 className="w-5 h-5 text-[#D4A373] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-[#3D2B1F] text-xs uppercase tracking-wider">100% From Scratch</h4>
-                  <p className="text-xs text-stone-500 mt-0.5">No pre-mixed powders—only pure flour, real butter, and fresh eggs.</p>
-                </div>
-              </div>
+            <p className="text-base text-stone-600 leading-relaxed font-sans">
+              Whether you have been an avid customer of Coaldale Bakery for years, or you have just heard about us recently, We guarantee you will not be disappointed.
+            </p>
 
-              <div className="flex items-start gap-3 bg-white p-4 rounded-xl border border-stone-200">
-                <CheckCircle2 className="w-5 h-5 text-[#D4A373] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-[#3D2B1F] text-xs uppercase tracking-wider">Authentic Dutch Recipes</h4>
-                  <p className="text-xs text-stone-500 mt-0.5">Traditional Stroopwafels, Banket, Tompouce, and Tijgerbrood.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 bg-white p-4 rounded-xl border border-stone-200">
-                <CheckCircle2 className="w-5 h-5 text-[#D4A373] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-[#3D2B1F] text-xs uppercase tracking-wider">Famous Sausage Rolls</h4>
-                  <p className="text-xs text-stone-500 mt-0.5">Warm lean Alberta pork wrapped in crisp, buttery flaky pastry.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 bg-white p-4 rounded-xl border border-stone-200">
-                <CheckCircle2 className="w-5 h-5 text-[#D4A373] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-[#3D2B1F] text-xs uppercase tracking-wider">Welcoming Community</h4>
-                  <p className="text-xs text-stone-500 mt-0.5">Friendly service with a warm smile for every customer who walks through our door.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Quote Box */}
-            <div className="bg-white p-6 rounded-xl border-l-4 border-l-[#D4A373] border border-stone-200 italic text-[#3D2B1F] text-sm font-serif">
-              "When you smell the fresh bread and coffee walking into Coaldale Bakery, you know you're family."
-            </div>
+            <p className="text-base text-stone-600 leading-relaxed font-sans font-medium text-[#3D2B1F]">
+              Consider Coaldale Bakery the next time your looking for a fast, fresh Breakfast, Lunch or Snack, We look forward to serving you soon!
+            </p>
 
           </div>
 
