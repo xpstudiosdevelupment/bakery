@@ -9,7 +9,6 @@ import { Hero } from './components/Hero';
 import { StorySection } from './components/StorySection';
 import { MenuSection } from './components/MenuSection';
 import { DailySpecials } from './components/DailySpecials';
-import { CustomCakeSection } from './components/CustomCakeSection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { LocationHoursSection } from './components/LocationHoursSection';
 import { AmenitiesSection } from './components/AmenitiesSection';
@@ -113,8 +112,6 @@ export default function App() {
         <AmenitiesSection />
 
         <DailySpecials onAddToCart={handleAddToCart} />
-
-        <CustomCakeSection />
 
         <ReviewsSection />
 
