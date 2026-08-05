@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Clock, ShoppingBag, Menu as MenuIcon, X, Sparkles, ChevronRight } from 'lucide-react';
+import { Phone, MapPin, Clock, ShoppingBag, Menu as MenuIcon, X, Sparkles, ChevronRight, Instagram } from 'lucide-react';
 import { BAKERY_INFO } from '../data/bakeryData';
 import { getStoreStatus } from '../utils/timeUtils';
 import { TakeoutCartItem } from '../types';
@@ -118,9 +118,21 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Header Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a
+              href={BAKERY_INFO.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              id="header-instagram-btn"
+              className="flex items-center gap-2 bg-[#3D2B1F] hover:bg-[#5A4030] text-[#FDFBF7] px-4 py-2.5 text-xs uppercase tracking-widest font-bold transition-all shadow-xs active:scale-95 rounded-lg"
+              title="Follow @coaldale_bakery on Instagram"
+            >
+              <Instagram className="w-4 h-4 text-[#D4A373]" />
+              <span className="hidden sm:inline">Instagram</span>
+            </a>
+
+            <a
               href={`tel:${BAKERY_INFO.phone.replace(/[^0-9]/g, '')}`}
               id="header-call-us-btn"
-              className="flex items-center gap-2 bg-[#3D2B1F] hover:bg-[#5A4030] text-[#FDFBF7] px-5 py-2.5 text-xs uppercase tracking-widest font-bold transition-all shadow-xs active:scale-95"
+              className="flex items-center gap-2 bg-[#3D2B1F] hover:bg-[#5A4030] text-[#FDFBF7] px-5 py-2.5 text-xs uppercase tracking-widest font-bold transition-all shadow-xs active:scale-95 rounded-lg"
             >
               <Phone className="w-4 h-4 text-[#D4A373]" />
               <span>Call Us</span>
@@ -160,11 +172,21 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="pt-2 flex flex-col gap-2">
             <a
               href={`tel:${BAKERY_INFO.phone.replace(/[^0-9]/g, '')}`}
-              className="w-full flex items-center justify-center gap-2 bg-[#3D2B1F] text-[#FDFBF7] py-3 text-xs uppercase tracking-widest font-bold"
+              className="w-full flex items-center justify-center gap-2 bg-[#3D2B1F] text-[#FDFBF7] py-3 text-xs uppercase tracking-widest font-bold rounded-lg"
               id="mobile-menu-call-btn"
             >
               <Phone className="w-4 h-4 text-[#D4A373]" />
               <span>Call (403) 345-3322</span>
+            </a>
+            <a
+              href={BAKERY_INFO.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-[#3D2B1F] text-[#FDFBF7] py-3 text-xs uppercase tracking-widest font-bold rounded-lg"
+              id="mobile-menu-instagram-btn"
+            >
+              <Instagram className="w-4 h-4 text-[#D4A373]" />
+              <span>Instagram (@coaldale_bakery)</span>
             </a>
           </div>
         </div>

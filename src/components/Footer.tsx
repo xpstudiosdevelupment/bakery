@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Globe, Clock, Heart, ArrowRight, Check } from 'lucide-react';
+import { Phone, MapPin, Globe, Clock, Heart, ArrowRight, Check, Instagram } from 'lucide-react';
 import { BAKERY_INFO } from '../data/bakeryData';
 import logoImg from '../assets/images/coaldale_logo_exact_1785891207590.jpg';
 import { ScrollFloat } from './ScrollFloat';
@@ -105,6 +105,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <Globe className="w-4 h-4 text-[#D4A373] shrink-0" />
                 <a href={`https://${BAKERY_INFO.website}`} target="_blank" rel="noreferrer" className="hover:text-[#D4A373]">
                   {BAKERY_INFO.website}
+                </a>
+              </li>
+              <li className="flex items-center gap-2 pt-1">
+                <Instagram className="w-4 h-4 text-[#D4A373] shrink-0" />
+                <a 
+                  href={BAKERY_INFO.instagramUrl} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="hover:text-[#D4A373] transition-colors flex items-center gap-1"
+                  id="footer-instagram-link"
+                >
+                  <span>Follow @coaldale_bakery</span>
+                  <ArrowRight className="w-3 h-3" />
                 </a>
               </li>
               <li className="flex items-start gap-2 pt-1 border-t border-white/10 text-stone-400">

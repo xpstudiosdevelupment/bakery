@@ -51,6 +51,7 @@ export const BAKERY_INFO = {
   takeoutAvailable: true,
   deliveryAvailable: false,
   googleMapsUrl: 'https://maps.google.com/?q=1907+20th+Ave,+Coaldale,+AB+T1M+1M9',
+  instagramUrl: 'https://www.instagram.com/coaldale_bakery?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
 };
 
 export const BUSINESS_HOURS: BusinessHour[] = [

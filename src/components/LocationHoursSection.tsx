@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Globe, Clock, Navigation, Copy, Check, ExternalLink, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Globe, Clock, Navigation, Copy, Check, ExternalLink, AlertCircle, Instagram } from 'lucide-react';
 import { BAKERY_INFO, BUSINESS_HOURS } from '../data/bakeryData';
 import { getStoreStatus, getCurrentDayName } from '../utils/timeUtils';
 import { ScrollFloat } from './ScrollFloat';
@@ -101,22 +101,43 @@ export const LocationHoursSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Website */}
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#F3F4F6] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
-                    <Globe className="w-4 h-4" />
+                {/* Website & Instagram */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-[#F3F4F6] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
+                      <Globe className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-[#3D2B1F] text-xs uppercase tracking-wider">Official Website</div>
+                      <a
+                        href={`https://${BAKERY_INFO.website}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs text-[#D4A373] font-bold hover:underline inline-flex items-center gap-1"
+                      >
+                        <span>{BAKERY_INFO.website}</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-bold text-[#3D2B1F] text-xs uppercase tracking-wider">Official Website</div>
-                    <a
-                      href={`https://${BAKERY_INFO.website}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs text-[#D4A373] font-bold hover:underline inline-flex items-center gap-1"
-                    >
-                      <span>{BAKERY_INFO.website}</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-[#F3F4F6] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
+                      <Instagram className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-[#3D2B1F] text-xs uppercase tracking-wider">Instagram</div>
+                      <a
+                        href={BAKERY_INFO.instagramUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs text-[#D4A373] font-bold hover:underline inline-flex items-center gap-1"
+                        id="location-instagram-link"
+                      >
+                        <span>@coaldale_bakery</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
                 </div>
 
