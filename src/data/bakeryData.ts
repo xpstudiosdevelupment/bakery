@@ -30,6 +30,8 @@ import peasAndCarrotsImg from '../assets/images/peas_and_carrots_1785952913079.j
 import mixedVegImg from '../assets/images/steamed_mixed_vegetables_1785952921746.jpg';
 
 import yellowStorefrontImg from '../assets/images/coaldale_yellow_storefront_1785964897960.jpg';
+import chocolateCaramelCakeImg from '../assets/images/chocolate_caramel_cake_1785969609420.jpg';
+import whiteButtercreamCakeImg from '../assets/images/white_buttercream_cake_1785970022342.jpg';
 
 export const BAKERY_IMAGES = {
   hero: heroArtisanImg,
@@ -581,7 +583,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 38.00,
     unit: '8" round',
     description: 'White cake with layers of white buttercream icing and custard, iced with white buttercream icing.',
-    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=800&q=80',
+    image: whiteButtercreamCakeImg,
     tags: ['Buttercream', 'Custard Layer'],
     dietary: ['Vegetarian']
   },
@@ -618,7 +620,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 42.00,
     unit: '8" round',
     description: 'Chocolate cake layered with scrumptious caramel and chocolate buttercream iced in chocolate buttercream and decorated with chocolate caramel candies.',
-    image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80',
+    image: chocolateCaramelCakeImg,
     tags: ['Scrumptious Caramel', 'Chocolate Candies'],
     dietary: ['Vegetarian']
   },
