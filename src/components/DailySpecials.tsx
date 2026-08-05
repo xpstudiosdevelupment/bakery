@@ -26,7 +26,7 @@ export const DailySpecials: React.FC<DailySpecialsProps> = ({ onAddToCart }) => 
   ];
 
   return (
-    <section id="specials" className="py-16 sm:py-20 bg-[#FDFBF7] border-b border-stone-200 overflow-hidden">
+    <section id="specials" className="py-16 sm:py-20 bg-[#F3F4F6] border-b border-stone-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -89,7 +89,7 @@ export const DailySpecials: React.FC<DailySpecialsProps> = ({ onAddToCart }) => 
                 </h3>
 
                 {activeSpecial.discountText && (
-                  <div className="bg-[#FDFBF7] p-4 rounded-xl border border-stone-200 text-[#3D2B1F] font-semibold text-sm sm:text-base flex items-start gap-3">
+                  <div className="bg-[#F3F4F6] p-4 rounded-xl border border-stone-200 text-[#3D2B1F] font-semibold text-sm sm:text-base flex items-start gap-3">
                     <Sparkles className="w-5 h-5 text-[#D4A373] shrink-0 mt-0.5" />
                     <span>{activeSpecial.discountText}</span>
                   </div>
@@ -108,7 +108,7 @@ export const DailySpecials: React.FC<DailySpecialsProps> = ({ onAddToCart }) => 
                 {activeSpecial.items.map((item, idx) => (
                   <FloatingImageContainer key={item.id} delay={0.1 * idx}>
                     <div
-                      className="bg-[#FDFBF7] p-3 rounded-xl border border-stone-200 flex items-center justify-between gap-3 hover:border-[#D4A373] transition-colors"
+                      className="bg-[#F3F4F6] p-3 rounded-xl border border-stone-200 flex items-center justify-between gap-3 hover:border-[#D4A373] transition-colors"
                     >
                       <div className="flex items-center gap-3">
                         <img
@@ -143,7 +143,7 @@ export const DailySpecials: React.FC<DailySpecialsProps> = ({ onAddToCart }) => 
                   Plan your visit to catch items when they are warmest and freshest!
                 </p>
               </div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#3D2B1F] bg-[#FDFBF7] px-3.5 py-2 rounded-lg border border-stone-200">
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#3D2B1F] bg-[#F3F4F6] px-3.5 py-2 rounded-lg border border-stone-200">
                 <Clock className="w-4 h-4 text-[#D4A373]" /> Open Tuesday-Sat at 7:00 AM
               </div>
             </div>
@@ -152,7 +152,7 @@ export const DailySpecials: React.FC<DailySpecialsProps> = ({ onAddToCart }) => 
               {ovenDrops.map((drop, i) => (
                 <ScrollFloat key={i} delay={i * 0.1} floatOnHover>
                   <div
-                    className="bg-[#FDFBF7] p-4 rounded-xl border border-stone-200 shadow-2xs flex flex-col justify-between space-y-2 hover:border-[#D4A373] transition-colors h-full"
+                    className="bg-[#F3F4F6] p-4 rounded-xl border border-stone-200 shadow-2xs flex flex-col justify-between space-y-2 hover:border-[#D4A373] transition-colors h-full"
                   >
                     <div>
                       <span className="bg-[#3D2B1F] text-[#D4A373] text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded inline-block mb-2">

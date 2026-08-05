@@ -44,7 +44,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="py-16 sm:py-20 bg-[#FDFBF7] border-b border-stone-200">
+    <section id="reviews" className="py-16 sm:py-20 bg-[#F3F4F6] border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -82,21 +82,21 @@ export const ReviewsSection: React.FC = () => {
             <div className="md:col-span-7 space-y-2 text-xs font-sans">
               <div className="flex items-center gap-3">
                 <span className="w-12 font-bold text-[#3D2B1F]">5 Stars</span>
-                <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
+                <div className="flex-1 h-2.5 bg-[#F3F4F6] rounded-full overflow-hidden border border-stone-200">
                   <div className="h-full bg-[#D4A373] rounded-full w-[92%]" />
                 </div>
                 <span className="w-10 text-right font-medium text-stone-400">92%</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="w-12 font-bold text-[#3D2B1F]">4 Stars</span>
-                <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
+                <div className="flex-1 h-2.5 bg-[#F3F4F6] rounded-full overflow-hidden border border-stone-200">
                   <div className="h-full bg-[#D4A373]/80 rounded-full w-[6%]" />
                 </div>
                 <span className="w-10 text-right font-medium text-stone-400">6%</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="w-12 font-bold text-[#3D2B1F]">3 Stars</span>
-                <div className="flex-1 h-2.5 bg-[#FDFBF7] rounded-full overflow-hidden border border-stone-200">
+                <div className="flex-1 h-2.5 bg-[#F3F4F6] rounded-full overflow-hidden border border-stone-200">
                   <div className="h-full bg-[#D4A373]/50 rounded-full w-[2%]" />
                 </div>
                 <span className="w-10 text-right font-medium text-stone-400">2%</span>
@@ -176,7 +176,7 @@ export const ReviewsSection: React.FC = () => {
                   </div>
 
                   {rev.favoriteItem && (
-                    <span className="bg-[#FDFBF7] text-[#D4A373] text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-md border border-stone-200 max-w-[130px] truncate">
+                    <span className="bg-[#F3F4F6] text-[#D4A373] text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-md border border-stone-200 max-w-[130px] truncate">
                       ❤️ {rev.favoriteItem}
                     </span>
                   )}
@@ -192,7 +192,7 @@ export const ReviewsSection: React.FC = () => {
       {/* Leave Review Modal */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-[#FDFBF7] max-w-md w-full rounded-2xl p-6 border border-stone-200 shadow-2xl space-y-4">
+          <div className="bg-[#F3F4F6] max-w-md w-full rounded-2xl p-6 border border-stone-200 shadow-2xl space-y-4">
             
             <div className="flex justify-between items-center border-b border-stone-200 pb-3">
               <h3 className="font-serif font-bold text-xl text-[#3D2B1F]">Write a Review for Coaldale Bakery</h3>

@@ -84,7 +84,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-[#3D2B1F] font-sans flex flex-col selection:bg-[#D4A373]/30">
+    <div className="min-h-screen bg-[#F3F4F6] text-[#3D2B1F] font-sans flex flex-col selection:bg-[#D4A373]/30">
       
       {/* Header Bar */}
       <Header

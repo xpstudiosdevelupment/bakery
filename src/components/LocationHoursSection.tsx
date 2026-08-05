@@ -17,7 +17,7 @@ export const LocationHoursSection: React.FC = () => {
   };
 
   return (
-    <section id="location" className="py-16 sm:py-20 bg-[#FDFBF7] border-b border-stone-200">
+    <section id="location" className="py-16 sm:py-20 bg-[#F3F4F6] border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
@@ -66,7 +66,7 @@ export const LocationHoursSection: React.FC = () => {
                 
                 {/* Full Address */}
                 <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#FDFBF7] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
+                  <div className="w-9 h-9 rounded-xl bg-[#F3F4F6] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div className="flex-1">
@@ -87,7 +87,7 @@ export const LocationHoursSection: React.FC = () => {
 
                 {/* Phone */}
                 <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#FDFBF7] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
+                  <div className="w-9 h-9 rounded-xl bg-[#F3F4F6] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
@@ -103,7 +103,7 @@ export const LocationHoursSection: React.FC = () => {
 
                 {/* Website */}
                 <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#FDFBF7] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
+                  <div className="w-9 h-9 rounded-xl bg-[#F3F4F6] text-[#D4A373] flex items-center justify-center shrink-0 border border-stone-200">
                     <Globe className="w-4 h-4" />
                   </div>
                   <div>
@@ -142,7 +142,7 @@ export const LocationHoursSection: React.FC = () => {
                 <h3 className="font-serif font-bold text-lg text-[#3D2B1F] flex items-center gap-2">
                   <Clock className="w-4 h-4 text-[#D4A373]" /> Operating Hours
                 </h3>
-                <span className="text-[9px] font-bold text-[#D4A373] bg-[#FDFBF7] uppercase tracking-widest px-2.5 py-1 rounded border border-stone-200">
+                <span className="text-[9px] font-bold text-[#D4A373] bg-[#F3F4F6] uppercase tracking-widest px-2.5 py-1 rounded border border-stone-200">
                   Tue-Sat Fresh Baking
                 </span>
               </div>
@@ -157,7 +157,7 @@ export const LocationHoursSection: React.FC = () => {
                       className={`flex justify-between items-center px-3 py-2 rounded-lg font-medium transition-colors ${
                         isToday
                           ? 'bg-[#3D2B1F] text-[#FDFBF7] font-bold shadow-2xs'
-                          : 'hover:bg-[#FDFBF7] text-[#3D2B1F]'
+                          : 'hover:bg-[#F3F4F6] text-[#3D2B1F]'
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -192,7 +192,7 @@ export const LocationHoursSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex items-center gap-1.5 bg-[#FDFBF7] p-1 rounded-lg border border-stone-200 text-xs">
+              <div className="flex items-center gap-1.5 bg-[#F3F4F6] p-1 rounded-lg border border-stone-200 text-xs">
                 <button
                   onClick={() => setActiveMapView('map')}
                   className={`px-3 py-1 rounded-md text-[10px] uppercase tracking-wider font-bold transition-all ${
@@ -238,7 +238,7 @@ export const LocationHoursSection: React.FC = () => {
 
             </div>
 
-            <div className="bg-[#FDFBF7] p-3 rounded-xl border border-stone-200 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-600 font-sans gap-2">
+            <div className="bg-[#F3F4F6] p-3 rounded-xl border border-stone-200 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-600 font-sans gap-2">
               <div className="flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 text-[#D4A373] shrink-0" />
                 <span>Driving from Lethbridge? Just 12 minutes East along Crowsnest Highway (Hwy 3).</span>

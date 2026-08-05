@@ -50,7 +50,7 @@ export const TakeoutDrawer: React.FC<TakeoutDrawerProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden bg-black/60 backdrop-blur-xs flex justify-end animate-fadeIn">
-      <div className="w-full max-w-md bg-[#FDFBF7] h-full shadow-2xl border-l border-stone-200 flex flex-col justify-between overflow-y-auto">
+      <div className="w-full max-w-md bg-[#F3F4F6] h-full shadow-2xl border-l border-stone-200 flex flex-col justify-between overflow-y-auto">
         
         {/* Header */}
         <div className="p-4 sm:p-6 bg-[#3D2B1F] text-[#FDFBF7] flex items-center justify-between">
@@ -106,7 +106,7 @@ export const TakeoutDrawer: React.FC<TakeoutDrawerProps> = ({
                 </div>
               </div>
 
-              <div className="bg-[#FDFBF7] p-4 rounded-xl border border-stone-200 text-xs text-stone-600 text-left space-y-1 font-sans">
+              <div className="bg-[#F3F4F6] p-4 rounded-xl border border-stone-200 text-xs text-stone-600 text-left space-y-1 font-sans">
                 <div className="font-bold text-[#3D2B1F] flex items-center gap-1.5">
                   <Phone className="w-4 h-4 text-[#D4A373]" /> Need to modify or pay by phone?
                 </div>
@@ -167,7 +167,7 @@ export const TakeoutDrawer: React.FC<TakeoutDrawerProps> = ({
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <div className="flex items-center bg-[#FDFBF7] rounded-lg border border-stone-200 px-1 py-0.5">
+                      <div className="flex items-center bg-[#F3F4F6] rounded-lg border border-stone-200 px-1 py-0.5">
                         <button
                           onClick={() => onUpdateQuantity(item.menuItem.id, -1)}
                           className="p-1 hover:text-[#D4A373]"

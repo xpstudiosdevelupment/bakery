@@ -133,7 +133,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Floating Highlight Card */}
               <ScrollFloat delay={0.4} direction="up" distance={30} floatOnHover className="absolute -bottom-6 -left-4 sm:-left-6 z-10">
                 <div className="bg-white p-4 rounded-xl shadow-xl border border-stone-200 flex items-center gap-3.5 max-w-[260px] sm:max-w-[280px]">
-                  <div className="w-11 h-11 rounded-lg bg-[#FDFBF7] flex items-center justify-center text-[#D4A373] shrink-0 border border-stone-200">
+                  <div className="w-11 h-11 rounded-lg bg-[#F3F4F6] flex items-center justify-center text-[#D4A373] shrink-0 border border-stone-200">
                     <Award className="w-5 h-5" />
                   </div>
                   <div>

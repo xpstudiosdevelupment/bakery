@@ -65,7 +65,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
         >
           <div>
             {/* Item Image & Badges */}
-            <div className="relative h-48 overflow-hidden bg-[#FDFBF7]">
+            <div className="relative h-48 overflow-hidden bg-[#F3F4F6]">
               <img
                 src={item.image}
                 alt={item.name}
@@ -123,7 +123,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
               {/* Tags & Dietary Chips */}
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {item.tags.map((tag, idx) => (
-                  <span key={idx} className="bg-[#FDFBF7] text-stone-500 text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded border border-stone-200">
+                  <span key={idx} className="bg-[#F3F4F6] text-stone-500 text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded border border-stone-200">
                     {tag}
                   </span>
                 ))}
@@ -151,7 +151,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
   };
 
   return (
-    <section id="menu" className="py-16 sm:py-20 bg-[#FDFBF7] border-b border-stone-200">
+    <section id="menu" className="py-16 sm:py-20 bg-[#F3F4F6] border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -201,7 +201,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 id="menu-search-input"
-                className="w-full pl-9 pr-4 py-2 rounded-lg bg-[#FDFBF7] border border-stone-200 text-xs text-[#3D2B1F] placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-[#D4A373]"
+                className="w-full pl-9 pr-4 py-2 rounded-lg bg-[#F3F4F6] border border-stone-200 text-xs text-[#3D2B1F] placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-[#D4A373]"
               />
               {searchQuery && (
                 <button
@@ -231,7 +231,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
                   className={`px-3 py-1.5 rounded-md text-[10px] uppercase tracking-wider font-bold transition-colors whitespace-nowrap ${
                     selectedDietary === filter.id
                       ? 'bg-[#D4A373] text-[#3D2B1F]'
-                      : 'bg-[#FDFBF7] text-stone-600 hover:bg-stone-100 border border-stone-200'
+                      : 'bg-[#F3F4F6] text-stone-600 hover:bg-stone-100 border border-stone-200'
                   }`}
                 >
                   {filter.label}
@@ -472,7 +472,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItemI
       {/* Item Details Modal */}
       {activeItemModal && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-[#FDFBF7] max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl border border-stone-200 space-y-4 max-h-[90vh] overflow-y-auto">
+          <div className="bg-[#F3F4F6] max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl border border-stone-200 space-y-4 max-h-[90vh] overflow-y-auto">
             
             <div className="relative h-64 bg-[#3D2B1F]">
               <img

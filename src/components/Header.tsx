@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#FDFBF7]">
+    <header className="sticky top-0 z-40 w-full bg-[#F3F4F6]">
       {/* Top Info Banner */}
       <div className="bg-[#3D2B1F] text-[#FDFBF7] text-xs py-2 px-4 border-b border-stone-800">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
@@ -72,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Header Navigation */}
-      <div className="bg-[#FDFBF7]/95 backdrop-blur-md border-b border-stone-200 px-4 py-3.5">
+      <div className="bg-[#F3F4F6]/95 backdrop-blur-md border-b border-stone-200 px-4 py-3.5">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           {/* Logo */}
@@ -141,7 +141,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#FDFBF7] border-b border-stone-200 px-4 py-4 space-y-2 shadow-md animate-fadeIn">
+        <div className="lg:hidden bg-[#F3F4F6] border-b border-stone-200 px-4 py-4 space-y-2 shadow-md animate-fadeIn">
           {navItems.map((item) => (
             <button
               key={item.id}

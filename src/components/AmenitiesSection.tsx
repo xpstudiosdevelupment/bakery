@@ -68,7 +68,7 @@ export const AmenitiesSection: React.FC = () => {
   ];
 
   return (
-    <section id="amenities" className="py-16 sm:py-20 bg-[#FAF7F2] border-b border-stone-200">
+    <section id="amenities" className="py-16 sm:py-20 bg-[#F3F4F6] border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title & Header */}
@@ -94,7 +94,7 @@ export const AmenitiesSection: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center gap-3 mb-4 border-b border-stone-100 pb-3">
-                    <div className="p-2.5 rounded-xl bg-[#FDFBF7] border border-stone-200/60">
+                    <div className="p-2.5 rounded-xl bg-[#F3F4F6] border border-stone-200/60">
                       {cat.icon}
                     </div>
                     <h3 className="font-serif font-bold text-lg text-[#3D2B1F]">
