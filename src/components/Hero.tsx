@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Phone, MapPin, ShoppingBag, Award, ArrowRight } from 'lucide-react';
+import { Star, Phone, MapPin, ShoppingBag, ArrowRight } from 'lucide-react';
 import { BAKERY_INFO, BAKERY_IMAGES } from '../data/bakeryData';
 import { ScrollFloat, FloatingImageContainer } from './ScrollFloat';
 
@@ -129,20 +129,6 @@ export const Hero: React.FC<HeroProps> = ({
                   </p>
                 </div>
               </FloatingImageContainer>
-
-              {/* Floating Highlight Card */}
-              <ScrollFloat delay={0.4} direction="up" distance={30} floatOnHover className="absolute -bottom-6 -left-4 sm:-left-6 z-10">
-                <div className="bg-white p-4 rounded-xl shadow-xl border border-stone-200 flex items-center gap-3.5 max-w-[260px] sm:max-w-[280px]">
-                  <div className="w-11 h-11 rounded-lg bg-[#F3F4F6] flex items-center justify-center text-[#D4A373] shrink-0 border border-stone-200">
-                    <Award className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-bold text-[#D4A373] uppercase tracking-widest">Famous Local Legend</div>
-                    <div className="font-serif font-bold text-sm text-[#3D2B1F]">Dutch Sausage Rolls</div>
-                    <div className="text-[10px] text-stone-400 uppercase tracking-wider font-medium">Warm & flaky from 10:00 AM</div>
-                  </div>
-                </div>
-              </ScrollFloat>
 
               {/* Floating Location Card */}
               <ScrollFloat delay={0.3} direction="down" distance={25} floatOnHover className="absolute -top-4 -right-2 sm:-right-4 z-10">
