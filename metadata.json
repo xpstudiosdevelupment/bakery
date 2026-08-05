@@ -1,0 +1,6 @@
+{
+  "name": "Coaldale Bakery",
+  "description": "Warm, modern website for Coaldale Bakery featuring artisan breads, pastries, custom cakes, daily specials, menu, takeout ordering, customer reviews, and location in Coaldale, AB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
