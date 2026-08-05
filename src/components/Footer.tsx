@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Globe, Clock, Heart, ArrowRight, Check, Instagram } from 'lucide-react';
+import { Phone, MapPin, Globe, Clock, Heart, ArrowRight, Check, Instagram, Facebook } from 'lucide-react';
 import { BAKERY_INFO } from '../data/bakeryData';
 import logoImg from '../assets/images/coaldale_logo_exact_1785891207590.jpg';
 import { ScrollFloat } from './ScrollFloat';
@@ -108,6 +108,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </a>
               </li>
               <li className="flex items-center gap-2 pt-1">
+                <Facebook className="w-4 h-4 text-[#D4A373] shrink-0" />
+                <a 
+                  href={BAKERY_INFO.facebookUrl} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="hover:text-[#D4A373] transition-colors flex items-center gap-1"
+                  id="footer-facebook-link"
+                >
+                  <span>Follow on Facebook</span>
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
                 <Instagram className="w-4 h-4 text-[#D4A373] shrink-0" />
                 <a 
                   href={BAKERY_INFO.instagramUrl} 

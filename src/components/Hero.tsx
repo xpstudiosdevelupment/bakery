@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Phone, MapPin, ShoppingBag, ArrowRight, Instagram } from 'lucide-react';
+import { Star, Phone, MapPin, ShoppingBag, ArrowRight, Instagram, Facebook } from 'lucide-react';
 import { BAKERY_INFO, BAKERY_IMAGES } from '../data/bakeryData';
 import { ScrollFloat, FloatingImageContainer } from './ScrollFloat';
 
@@ -78,6 +78,17 @@ export const Hero: React.FC<HeroProps> = ({
                 >
                   <Phone className="w-4 h-4 text-[#D4A373]" />
                   <span>Call Us (403) 345-3322</span>
+                </a>
+
+                <a
+                  href={BAKERY_INFO.facebookUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  id="hero-facebook-btn"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-[#FDFBF7] border border-white/30 px-6 py-3.5 text-xs uppercase tracking-widest font-bold shadow-sm transition-all rounded-lg backdrop-blur-xs"
+                >
+                  <Facebook className="w-4 h-4 text-[#D4A373]" />
+                  <span>Facebook</span>
                 </a>
 
                 <a

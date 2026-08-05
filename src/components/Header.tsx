@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Clock, ShoppingBag, Menu as MenuIcon, X, Sparkles, ChevronRight, Instagram } from 'lucide-react';
+import { Phone, MapPin, Clock, ShoppingBag, Menu as MenuIcon, X, Sparkles, ChevronRight, Instagram, Facebook } from 'lucide-react';
 import { BAKERY_INFO } from '../data/bakeryData';
 import { getStoreStatus } from '../utils/timeUtils';
 import { TakeoutCartItem } from '../types';
@@ -118,6 +118,18 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Header Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a
+              href={BAKERY_INFO.facebookUrl}
+              target="_blank"
+              rel="noreferrer"
+              id="header-facebook-btn"
+              className="flex items-center gap-2 bg-[#3D2B1F] hover:bg-[#5A4030] text-[#FDFBF7] px-4 py-2.5 text-xs uppercase tracking-widest font-bold transition-all shadow-xs active:scale-95 rounded-lg"
+              title="Follow Coaldale Bakery on Facebook"
+            >
+              <Facebook className="w-4 h-4 text-[#D4A373]" />
+              <span className="hidden sm:inline">Facebook</span>
+            </a>
+
+            <a
               href={BAKERY_INFO.instagramUrl}
               target="_blank"
               rel="noreferrer"
@@ -177,6 +189,16 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Phone className="w-4 h-4 text-[#D4A373]" />
               <span>Call (403) 345-3322</span>
+            </a>
+            <a
+              href={BAKERY_INFO.facebookUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-[#3D2B1F] text-[#FDFBF7] py-3 text-xs uppercase tracking-widest font-bold rounded-lg"
+              id="mobile-menu-facebook-btn"
+            >
+              <Facebook className="w-4 h-4 text-[#D4A373]" />
+              <span>Facebook (CoaldaleBakery)</span>
             </a>
             <a
               href={BAKERY_INFO.instagramUrl}
