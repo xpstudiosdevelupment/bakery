@@ -5,7 +5,6 @@ import {
   Coffee,
   UtensilsCrossed,
   Sparkles,
-  Zap,
   CreditCard,
   Car,
   Check
@@ -35,7 +34,6 @@ export const AmenitiesSection: React.FC = () => {
         'In-store shopping',
         'Onsite services',
         'Takeout',
-        'Delivery',
       ],
     },
     {
@@ -54,11 +52,6 @@ export const AmenitiesSection: React.FC = () => {
       items: ['Washroom'],
     },
     {
-      title: 'Planning',
-      icon: <Zap className="w-5 h-5 text-[#D4A373]" />,
-      items: ['Quick visit'],
-    },
-    {
       title: 'Payments',
       icon: <CreditCard className="w-5 h-5 text-[#D4A373]" />,
       items: ['Credit cards', 'Debit cards'],
@@ -69,7 +62,6 @@ export const AmenitiesSection: React.FC = () => {
       items: [
         'Free parking lot',
         'Free street parking',
-        'Paid parking lot',
       ],
     },
   ];
